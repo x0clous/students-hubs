@@ -1,4 +1,4 @@
-import 'dotenv/congig'
+import 'dotenv/config'
 export const env = {
     PORT: Number(process.env.PORT || 5000),
     CORS_ORIGIN: process.env.CORS_ORIGIN || '',
@@ -17,5 +17,5 @@ export function assertEnv() {
         'JWT_SECRET'
     ]
     const missing = required.filter(variable => !process.env[variable])
-    if(missing.length) throw new Error('Missing env vars: ${missing.join(', ')}')
+    if(missing.length) throw new Error(`Missing env vars: ${missing.join(', ')}`)
 }
